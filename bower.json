@@ -2,6 +2,7 @@
   "name": "cookie-banner",
   "version": "1.0.0",
   "homepage": "https://github.com/eaguerralde/cookie-banner",
+  "main": "src/cookiebanner.js",
   "authors": [
     "Eduardo Aguerralde <e.aguerralde@platomedia.tv>"
   ],
