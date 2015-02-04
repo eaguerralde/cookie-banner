@@ -1,0 +1,18 @@
+{
+  "name": "cookie-banner",
+  "version": "1.0.0",
+  "homepage": "https://github.com/eaguerralde/cookie-banner",
+  "authors": [
+    "Eduardo Aguerralde <e.aguerralde@platomedia.tv>"
+  ],
+  "description": "Cookie banner for eu compliance",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
