@@ -1,0 +1,42 @@
+{
+  "name": "cookie-banner",
+  "version": "1.0.0",
+  "description": "Cookie Banner is a super-easy way to ensure you're complying with the EU cookie law. Just reference the `cookiebanner.min.js` script from your page and you're done.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eaguerralde/cookie-banner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eaguerralde/cookie-banner/issues"
+  },
+  "homepage": "https://github.com/eaguerralde/cookie-banner",
+  "dependencies": {},
+  "devDependencies": {
+    "matchdep": "~0.3.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-karma": "~0.8.2",
+    "karma": "~0.12.1",
+    "karma-coverage": "~0.2.0",
+    "karma-jasmine": "~0.2.1",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "coveralls": "~2.11.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "build": "grunt build"
+  }
+}
