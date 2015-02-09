@@ -26,13 +26,31 @@ module.exports = function (grunt) {
 		//	]
 		//},
 		uglify: {
-			options: {
-				sourceMap: true
-			},
 			dist: {
+				options: {
+					sourceMap: true
+				},
 				files: {
 					'dist/cookiebanner.min.js': 'src/cookiebanner.js'
 				}
+			},
+			dist2: {
+				// The files to concatenate:
+				// Notice the wildcard, which is automatically expanded.
+				options: {
+					sourceMap: false,
+					beautify: true,
+					mangle: false,
+					compress: false
+				},
+				src: ['src/*.js'],
+				// The destination file:
+				// Notice the angle-bracketed ERB-like templating,
+				// which allows you to reference other properties.
+				// This is equivalent to 'dist/main.js'.
+				dest: 'dist/cookiebanner.js'
+				// You can reference any grunt config property you want.
+				// Ex: '<%= concat.options.separator %>' instead of ';'
 			}
 		}
 	});
