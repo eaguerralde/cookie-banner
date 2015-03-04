@@ -250,6 +250,9 @@
                     if (this.element) {
                         doc.body.removeChild(this.element);
                     }
+                    if (this.clone) {
+                        doc.body.removeChild(this.clone);
+                    }
                     if (this.element_mask) {
                         doc.body.removeChild(this.element_mask);
                     }
@@ -323,6 +326,16 @@
                 doc.body.appendChild(this.element_mask);
             }
             doc.body.appendChild(this.element);
+            var clone = this.element.cloneNode(true);
+            clone.style.position = "static";
+            clone.className = "cookiebanner clone";
+            clone.style.background = clone.style.color = clone.style.borderColor = "transparent";
+            var clone_a_list = clone.getElementsByTagName("a");
+            for (var x = 0; x <= clone_a_list.length - 1; x++) {
+                clone_a_list[x].style.color = "transparent";
+            }
+            this.clone = clone;
+            doc.body.appendChild(clone);
             this.inserted = true;
             if ("fade" === this.options.effect) {
                 this.element.style.opacity = 0;

@@ -335,6 +335,9 @@
                     if (this.element) {
                         doc.body.removeChild(this.element);
                     }
+                    if (this.clone) {
+                        doc.body.removeChild(this.clone);
+                    }
                     if (this.element_mask) {
                         doc.body.removeChild(this.element_mask);
                     }
@@ -434,6 +437,26 @@
             }
 
             doc.body.appendChild(this.element);
+
+            // prepare a clone to give page room for the banner
+            var clone = this.element.cloneNode(true);
+            // clear positioning
+            clone.style.position = 'static';
+            // add a class for extra customisation
+            clone.className = 'cookiebanner clone';
+            //clear all color
+            clone.style.background = clone.style.color = clone.style.borderColor = 'transparent';
+            // clear each link separately
+            var clone_a_list = clone.getElementsByTagName('a');
+            for(var x = 0; x <= clone_a_list.length - 1; x++){
+                clone_a_list[x].style.color = 'transparent';
+            }
+
+            // create a reachable property with our clone, mainly to hide it when closing the banner
+            this.clone = clone;
+
+            doc.body.appendChild(clone);
+
             this.inserted = true;
 
             if ('fade' === this.options.effect) {
